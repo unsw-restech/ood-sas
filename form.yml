@@ -1,0 +1,43 @@
+---
+cluster: "katana"
+form:
+  - version
+  - bc_num_hours
+  - num_cores
+  - memory
+  - bc_vnc_resolution
+  - bc_email_on_started
+attributes:
+  bc_num_hours:
+    help: >-
+      <a href="https://unsw-restech.github.io/using_katana/running_jobs.html#tips-for-using-pbs-and-katana-effectively">Tips for using Katana effectively</a>
+  num_cores:
+    id: num_cores
+    widget: number_field
+    label: "Number of cores"
+    value: 1
+    min: 0
+    max: 48
+    step: 1
+    help: >-
+      How many processor cores you need.
+  memory:
+    widget: number_field
+    label: "Memory (GB)"
+    value: 4
+    min: 4
+    max: 1000
+    step: 1
+    help: >-
+      How much memory you need.  If the amount of memory you request goes
+      over certain thresholds, it will affect your wait time.  The points
+      at which this happens are 124, 180, 248, 370, 750 and 1000 GB.
+  bc_vnc_resolution:
+    required: true
+  version:
+    widget: select
+    label: "SAS version"
+    help: >-
+      Which version of SAS you want to use.
+    options:
+      - [ "9.4", "sas/9.4" ]

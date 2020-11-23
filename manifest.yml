@@ -1,0 +1,10 @@
+---
+name: SAS
+category: Interactive Apps
+subcategory: GUIs
+role: batch_connect
+description: |
+  This page will launch [SAS] on a compute node in the [Katana cluster].
+
+  [SAS]: https://www.sas.com/
+  [Katana cluster]: https://unsw-restech.github.io/restech-docs

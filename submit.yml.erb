@@ -1,0 +1,13 @@
+<%-
+  ncpus = num_cores.blank? ? 1 : num_cores.to_i
+  mem = memory
+-%>
+---
+batch_connect:
+  template: vnc
+script:
+  job_name: "sas-kod"
+  native:
+    - "-l"
+    - "select=1:ncpus=<%= ncpus %>:mem=<%= mem %>gb"
+  email: "<%= ENV['USER'] %>@unsw.edu.au"
